@@ -63,8 +63,6 @@ class DemoPage extends LitElement {
           @change="${this.onModelSelected}"
         >
           <option value="deer">Deer</option>
-          <option value="monu7">Monument 7</option>
-          <option value="rudder">rudder</option>
         </select>
       </div>
 
