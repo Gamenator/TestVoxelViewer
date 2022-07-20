@@ -4,10 +4,10 @@ const path = require('path');
 module.exports = 
 {
     mode: "development",
-    entry: './demo/demo.js',
+    entry: './demo/demos.js',
     output: 
     {
-        filename: 'demo.js',
+        filename: 'demos.js',
         path: path.join(__dirname, '/dist'),
     },
     resolve: 
