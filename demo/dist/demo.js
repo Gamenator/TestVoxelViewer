@@ -443,56 +443,57 @@ canvas.show {
       </style>
 
       <model-viewer id="model-viewer"></model-viewer>
-    `}}),null===(_A=window.HTMLSlotElement)||void 0===_A||_A.prototype.assignedElements,console.warn("The main 'lit-element' module entrypoint is deprecated. Please update your imports to use the 'lit' package: 'lit' and 'lit/decorators.ts' or import from 'lit-element/lit-element.ts'. See https://lit.dev/msg/deprecated-import-path for more information.");const bA=[{value:"deer",label:"Deer"},{value:"rudder",label:"Rudder"}];class wA extends K{static get is(){return"demo-page"}static get properties(){return{selectedModel:{type:String}}}constructor(){super(),this.selectedModel="deer"}onModelSelected(){const t=this.shadowRoot.querySelector("#model-selection");this.selectedModel=t.value}render(){return D`
-            <style>
-                :host {
-                    display: block;
-                    margin: 0px;
-                    padding: 10px;
+    `}}),null===(_A=window.HTMLSlotElement)||void 0===_A||_A.prototype.assignedElements,console.warn("The main 'lit-element' module entrypoint is deprecated. Please update your imports to use the 'lit' package: 'lit' and 'lit/decorators.ts' or import from 'lit-element/lit-element.ts'. See https://lit.dev/msg/deprecated-import-path for more information.");class bA extends K{static get is(){return"demo-page"}static get properties(){return{selectedModel:{type:String}}}constructor(){super(),this.selectedModel="deer"}onModelSelected(){const t=this.shadowRoot.querySelector("#model-selection");this.selectedModel=t.value}render(){return D`
+      <style>
+        :host {
+          display: block;
+          margin: 0px;
+          padding: 10px;
 
-                    height: calc(100vh - 20px);
-                    width: calc(100vw - 20px);
-                }
+          height: calc(100vh - 20px);
+          width: calc(100vw - 20px);
+        }
 
-                .controls {
-                    height: 10%;
-                    width: 100%;
-                }
+        .controls {
+          height: 10%;
+          width: 100%;
+        }
 
-                .container {
-                    height: 90%;
-                    width: 100%;
+        .container {
+          height: 90%;
+          width: 100%;
 
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
-                .vox-viewer {
-                    height: 100%;
-                    width: 100%;
-                }
-            </style>
+        .vox-viewer {
+          height: 100%;
+          width: 100%;
+        }
+      </style>
 
-            <div class="controls">
-                Model: <br/>
-                <select
-                        id="model-selection"
-                        value="${this.selectedModel}"
-                        @change="${this.onModelSelected}"
-                >
-                    ${function*(t,e){if(void 0!==t){let n=0;for(const i of t)yield e(i,n++)}}(bA,(t=>D`
-                        <option value="${t.value}">${t.label}</option>`))}
-                </select>
-            </div>
+      <div class="controls">
+        Model: <br />
+        <select
+          id="model-selection"
+          value="${this.selectedModel}"
+          @change="${this.onModelSelected}"
+        >
+          <option value="deer">Deer</option>
+          <option value="monu7">Monument 7</option>
+          <option value="monu8">Monument 8</option>
+        </select>
+      </div>
 
-            <div class="container">
-                <vox-viewer
-                        class="vox-viewer"
-                        src="./models/${this.selectedModel}.vox"
-                        camera-controls
-                        auto-rotate
-                        shadow-intensity="0.3"
-                ></vox-viewer>
-            </div>
-        `}}customElements.define(wA.is,wA)})()})();
+      <div class="container">
+        <vox-viewer
+          class="vox-viewer"
+          src="./models/${this.selectedModel}.vox"
+          camera-controls
+          auto-rotate
+          shadow-intensity="0.3"
+        ></vox-viewer>
+      </div>
+    `}}customElements.define(bA.is,bA)})()})();
