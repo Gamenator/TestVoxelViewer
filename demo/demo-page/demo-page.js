@@ -66,7 +66,6 @@ class DemoPage extends LitElement {
           <option value="monu7">Monument 7</option>
           <option value="monu8">Monument 8</option>
 		  <option value="rudder">Rudder</option>
-		  <option value="dam">Dam</option>
         </select>
       </div>
 
