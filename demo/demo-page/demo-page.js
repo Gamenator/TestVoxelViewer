@@ -1,82 +1,92 @@
 import "../../vox-viewer";
-import { LitElement, html } from "lit-element";
+import {LitElement, html} from "lit-element";
+import {map} from 'lit/directives/map.js';
+
+const options = [
+    {value: 'deer', label: 'Deer'},
+    {value: 'monu7', label: 'Monument 7'},
+    {value: 'monu8', label: 'Monument 8'},
+    {value: 'deer', label: 'Deer'},
+    {value: 'rudder', label: 'Rudder'},
+];
 
 class DemoPage extends LitElement {
-  static get is() {
-    return "demo-page";
-  }
+    static get is() {
+        return "demo-page";
+    }
 
-  static get properties() {
-    return {
-      selectedModel: { type: String },
-    };
-  }
+    static get properties() {
+        return {
+            selectedModel: {type: String},
+        };
+    }
 
-  constructor() {
-    super();
-    this.selectedModel = "deer";
-  }
+    constructor() {
+        super();
+        this.selectedModel = "deer";
+    }
 
-  onModelSelected() {
-    const modelSelection = this.shadowRoot.querySelector("#model-selection");
+    onModelSelected() {
+        const modelSelection = this.shadowRoot.querySelector("#model-selection");
 
-    this.selectedModel = modelSelection.value;
-  }
+        this.selectedModel = modelSelection.value;
+    }
 
-  render() {
-    return html`
-      <style>
-        :host {
-          display: block;
-          margin: 0px;
-          padding: 10px;
+    render() {
+        return html`
+            <style>
+                :host {
+                    display: block;
+                    margin: 0px;
+                    padding: 10px;
 
-          height: calc(100vh - 20px);
-          width: calc(100vw - 20px);
-        }
+                    height: calc(100vh - 20px);
+                    width: calc(100vw - 20px);
+                }
 
-        .controls {
-          height: 10%;
-          width: 100%;
-        }
+                .controls {
+                    height: 10%;
+                    width: 100%;
+                }
 
-        .container {
-          height: 90%;
-          width: 100%;
+                .container {
+                    height: 90%;
+                    width: 100%;
 
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-        .vox-viewer {
-          height: 100%;
-          width: 100%;
-        }
-      </style>
+                .vox-viewer {
+                    height: 100%;
+                    width: 100%;
+                }
+            </style>
 
-      <div class="controls">
-        Model: <br />
-        <select
-          id="model-selection"
-          value="${this.selectedModel}"
-          @change="${this.onModelSelected}"
-        >
-          <option value="deer">Deer</option>
-        </select>
-      </div>
+            <div class="controls">
+                Model: <br/>
+                <select
+                        id="model-selection"
+                        value="${this.selectedModel}"
+                        @change="${this.onModelSelected}"
+                >
+                    ${map(options, (i) => html`
+                        <option value="${i.value}">${i.label}</option>`)}
+                </select>
+            </div>
 
-      <div class="container">
-        <vox-viewer
-          class="vox-viewer"
-          src="./models/${this.selectedModel}.vox"
-          camera-controls
-          auto-rotate
-          shadow-intensity="0.3"
-        ></vox-viewer>
-      </div>
-    `;
-  }
+            <div class="container">
+                <vox-viewer
+                        class="vox-viewer"
+                        src="./models/${this.selectedModel}.vox"
+                        camera-controls
+                        auto-rotate
+                        shadow-intensity="0.3"
+                ></vox-viewer>
+            </div>
+        `;
+    }
 }
 
 customElements.define(DemoPage.is, DemoPage);
