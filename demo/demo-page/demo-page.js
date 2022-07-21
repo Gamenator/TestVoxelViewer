@@ -4,10 +4,7 @@ import {map} from 'lit/directives/map.js';
 
 const options = [
     {value: 'deer', label: 'Deer'},
-    {value: 'monu7', label: 'Monument 7'},
-    {value: 'monu8', label: 'Monument 8'},
-    {value: 'dam', label: 'dam'},
-    {value: 'rudder', label: 'Rudder'},
+    {value: 'rudder', label: 'Rudder'}
 ];
 
 class DemoPage extends LitElement {
