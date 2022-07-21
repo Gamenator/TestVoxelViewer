@@ -10,4 +10,4 @@ which are exported by [Magicka Voxel](https://ephtracy.github.io/) as source ins
 
 ## 👀 Demo
 
-You can see a live demo [here](https://gamenator.github.io/TestVoxelViewer/demo/)
+You can see a live demo [here](https://florianfe.github.io/vox-viewer/demo/)
