@@ -6,7 +6,7 @@ const options = [
     {value: 'deer', label: 'Deer'},
     {value: 'monu7', label: 'Monument 7'},
     {value: 'monu8', label: 'Monument 8'},
-    {value: 'deer', label: 'Deer'},
+    {value: 'dam', label: 'dam'},
     {value: 'rudder', label: 'Rudder'},
 ];
 
